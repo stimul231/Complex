@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "С++ sockets on Unix and Windows", "index.html", [
+  [ "Complex", "index.html", [
     [ "Классы", "annotated.html", [
       [ "Классы", "annotated.html", "annotated_dup" ],
       [ "Алфавитный указатель классов", "classes.html", null ],

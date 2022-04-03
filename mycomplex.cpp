@@ -352,10 +352,15 @@ Complex operator-(const double& aLval, const Complex& aRval) {
 	@param aRval Комплексное число
 	@return Произведение чисел
 */
-Complex operator* (const double& aLval, const Complex& a)
+Complex operator* (const double& aLval, const Complex& aRval)
 {
 	Complex r;
-	r.Re = aLval * a.Re;
-	r.Im = aLval * a.Im;
+	r.Re = aLval * aRval.Re;
+	r.Im = aLval * aRval.Im;
 	return r;
 }
+
+//-------------------------------------------
+/*!
+	Изменения mycomplex.cpp 2
+*/
