@@ -14,7 +14,7 @@ using namespace std;
 	@param aRe действительная составляющая
 	@param aIm действительная составляющая
 */
-Complex::Complex(double aRe, double   aIm) 
+Complex::Complex(double aRe, double aIm) 
 { 
 	Re = aRe;   
 	Im = aIm; 
@@ -79,7 +79,7 @@ double Complex::abs()
 	@param aRval Комплексное число
 	@return Сумму комплексных чисел
 */
-Complex Complex ::  operator+ (const Complex& aRval)
+Complex Complex::operator+ (const Complex& aRval)
 {
 	Complex Result;
 	Result.Re = Re + aRval.Re;
@@ -93,7 +93,8 @@ Complex Complex ::  operator+ (const Complex& aRval)
 	@param aRval Комплексное число
 	@return Разность комплексных чисел
 */
-Complex   Complex  ::   operator- (const Complex& aRval) {
+Complex Complex::operator- (const Complex& aRval) 
+{
 	Complex Result;
 	Result.Re = Re - aRval.Re;
 	Result.Im = Im - aRval.Im;
@@ -106,12 +107,12 @@ Complex   Complex  ::   operator- (const Complex& aRval) {
 	@param aRval Вещественное число
 	@return Сумму комплексных чисел
 */
-Complex Complex ::operator+ (const double& aval)
+Complex Complex ::operator+ (const double& aRval)
 {
-	Complex result;
-	result.Re = Re + aval;
-	result.Im = Im;
-	return result;
+	Complex Result;
+	Result.Re = Re + aval;
+	Result.Im = Im;
+	return Result;
 }
 
 //-------------------------------------------
@@ -120,7 +121,7 @@ Complex Complex ::operator+ (const double& aval)
 	@param aRval Вещественное число
 	@return Разность комплексных чисел
 */
-Complex Complex:: operator- (const  double& aRval)
+Complex Complex::operator- (const  double& aRval)
 {
 	Complex Result(*this);
 	Result.Re = Re - aRval;
@@ -133,7 +134,7 @@ Complex Complex:: operator- (const  double& aRval)
 	@param aRval Комплексное число
 	@return Произведение комплексных чисел
 */
-Complex Complex  ::operator* (const Complex& aRval) 
+Complex Complex::operator* (const Complex& aRval) 
 {
 	Complex Result; 
 	Result.Re = Re * aRval.Re - Im * aRval.Im; 
@@ -175,7 +176,7 @@ Complex Complex::operator/ (const double& aRval)
 	@param aRval Комплексное число
 	@return Сумму комплексных чисел
 */
-Complex& Complex :: operator+=  (const Complex& arval)
+Complex& Complex::operator+= (const Complex& aRval)
 {
 	Re += arval.Re;
 	Im += arval.Im;
@@ -201,7 +202,7 @@ Complex& Complex::operator-= (const Complex& aRval)
 	@param aRval Комплексное число
 	@return Произведение комплексных чисел
 */
-Complex& Complex::operator*=(const Complex& aRval)
+Complex& Complex::operator*= (const Complex& aRval)
 {
 	double tmpRe = Re; 
 	Re = Re * aRval.Re - Im * aRval.Im;
@@ -239,7 +240,7 @@ Complex& Complex::operator-= (const double& aRval)
 	@param aRval Вещественное число
 	@return Произведение комплексных чисел
 */
-Complex& Complex::operator*=  (const  double& aRval) 
+Complex& Complex::operator*= (const  double& aRval) 
 { 
 	Re *= aRval;  
 	Im *= aRval;   
@@ -292,7 +293,7 @@ Complex& Complex::operator= (const double& aRval)
 	@param aRval Комплексное число
 	@return IO поток
 */
-istream& operator >>(istream& stream, Complex& aRval)
+istream& operator>> (istream& stream, Complex& aRval)
 {
 	char tmp[256];  
 	stream >> aRval.Re >> aRval.Im >> tmp;
@@ -306,7 +307,7 @@ istream& operator >>(istream& stream, Complex& aRval)
 	@param aRval Комплексное число число
 	@return IO поток
 */
-ostream& operator<<(ostream& stream, Complex& aRval)
+ostream& operator<< (ostream& stream, Complex& aRval)
 
 {
 	stream << aRval.Re;  
@@ -338,7 +339,8 @@ Complex operator+ (const double& aLval, const Complex& aRval)
 	@param aRval Комплексное число
 	@return Разность чисел
 */
-Complex operator-(const double& aLval, const Complex& aRval) {
+Complex operator-(const double& aLval, const Complex& aRval) 
+{
 	Complex Result;
 	Result.Re = aLval - aRval.Re;
 	Result.Im = -aRval.Im;
@@ -354,13 +356,8 @@ Complex operator-(const double& aLval, const Complex& aRval) {
 */
 Complex operator* (const double& aLval, const Complex& aRval)
 {
-	Complex r;
-	r.Re = aLval * aRval.Re;
-	r.Im = aLval * aRval.Im;
-	return r;
+	Complex Result;
+	Result.Re = aLval * a.Re;
+	Result.Im = aLval * a.Im;
+	return Result;
 }
-
-//-------------------------------------------
-/*!
-	Изменения mycomplex.cpp 2
-*/
